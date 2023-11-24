@@ -1,0 +1,33 @@
+Smart Helathcare
+
+
+Frontend 
+
+1) Frontend in terminla enter npm create vite@latest ./
+	select react and javascript 
+2)npm install -D tailwindcss postcss autoprefixer 
+3)npx tailwindcss init -p
+
+after complete command 
+Now goto tailwind.config.js file and edit 
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", ".src/**/*/{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+Now goto index.css and select all and clear then past 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+now enter this command in frontend 
+     => npm i react-router-dom react-icons react-spinners react-toastify swiper
+     => npm run dev	
+
+
