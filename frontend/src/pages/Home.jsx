@@ -12,6 +12,7 @@ import icon03 from "../assets/images/icon03.png";
 import featureimg from "../assets/images/feature-img.png";
 import videoIcon from "../assets/images/video-icon.png";
 import avatarIcon from "../assets/images/avatar-icon.png";
+import faqImg from "../assets/images/faq-img.png";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 
@@ -258,7 +259,7 @@ const Home = () => {
         </div>
       </section>
       {/* ========== feature Section end =========== */}
-      {/* ========== our great doctors  =========== */}
+      {/* ========== our great doctors start  =========== */}
       <section>
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
@@ -272,6 +273,21 @@ const Home = () => {
           <DoctorList />
         </div>
       </section>
+      {/* ========== our great doctors end  =========== */}
+
+      {/* ========= faq section start ========= */}
+      <section>
+        <div className="container">
+          <div className="flex justify-between gap-[50px] lg:gap-0">
+            <div className="w-1/2 hidden md:block">
+              <img src={faqImg} alt="faqImg" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/*1:34:51  */}
+      {/* ========= faq section end========= */}
     </>
   );
 };
