@@ -1,5 +1,4 @@
 import React from "react";
-
 import About from "../components/About/About";
 import ServiceList from "../components/Services/ServiceList";
 import DoctorList from "../components/Doctors/DoctorList";
@@ -15,6 +14,8 @@ import avatarIcon from "../assets/images/avatar-icon.png";
 import faqImg from "../assets/images/faq-img.png";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+import FaqItem from "../components/Faq/FaqItem";
+import FaqList from "../components/Faq/FaqList";
 
 const Home = () => {
   return (
@@ -282,14 +283,31 @@ const Home = () => {
             <div className="w-1/2 hidden md:block">
               <img src={faqImg} alt="faqImg" />
             </div>
+
+            <div className="w-full md:w-1/2">
+              <h2 className="heading">
+                Most Questions by our beloved patients
+              </h2>
+
+              <FaqList />
+            </div>
           </div>
         </div>
       </section>
 
-      {/*1:34:51  */}
       {/* ========= faq section end========= */}
+
+      {/* ========= testimonial========= */}
+      <div className="container">
+        <div className="xl:w-[470px] mx-auto">
+          <h2 className="heading text-center ">Our great doctors</h2>
+          <p className="text__para text-center"></p>
+        </div>
+      </div>
+      {/* ========= testimonial end========= */}
     </>
   );
 };
 
+// 1:42:19
 export default Home;
