@@ -31,5 +31,23 @@ now enter this command in frontend
      => npm run dev	
 
 
-4:17
 
+
+*****Backend 
+
+Run Backend use npm run start-dev
+and nodemon install 
+npm i nodemon
+
+
+
+mongodb cluster 
+username: smarthealthcare
+password: Smarthealthcare@9924
+
+
+MONGO_URI ma @ na badle %40
+
+
+
+11:50
