@@ -46,8 +46,7 @@ username: smarthealthcare
 password: Smarthealthcare@9924
 
 
-MONGO_URI ma @ na badle %40
+MONGO_URL ma @ na badle %40
 
-
-
-23:42
+JWT_SECRET_key mate terminal ma node then type crypto.randomBytes(256).toString('base64') and hit enter then show key copy and past to .env file 
+and remove '' 
