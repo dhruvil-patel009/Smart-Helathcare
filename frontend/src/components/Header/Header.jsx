@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/SmartHealthLogo.png";
 import userImg from "../../assets/images/avatar-icon.png";
 import { NavLink, Link } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
@@ -51,8 +51,8 @@ const Header = () => {
       <div className="container">
         <div className="flex items-center justify-between">
           {/* ====== log ========== */}
-          <div>
-            <img src={logo} alt="logo" />
+          <div className="logodiv">
+            <img src={logo} alt="logo" className="Logoimg" />
           </div>
 
           {/* ========== menu ============ */}

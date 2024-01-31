@@ -86,3 +86,16 @@ body {
     display: block;
   }
 }
+
+
+
+/* Header Css */
+
+
+.logodiv {
+  width: 60%;
+}
+
+.Logoimg {
+  max-width: 20%;
+}
