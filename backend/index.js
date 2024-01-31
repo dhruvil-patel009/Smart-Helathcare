@@ -42,11 +42,9 @@ app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/users", userRoute);
-app.use("/api/v1/doctor", doctorRoute);
+app.use("/api/v1/doctors", doctorRoute);
 
 app.listen(port, () => {
   connectDB();
   console.log("Server is running on port" + port);
 });
-
-// 48:25  part-3
