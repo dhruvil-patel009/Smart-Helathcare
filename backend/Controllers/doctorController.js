@@ -73,7 +73,7 @@ export const getAllDoctor = async (req, res) => {
       );
     }
 
-    const doctors = await Doctor.find({}).select("-password"); // select no use kari ("-")thi j data show na karva hoy te
+    const doctors = await Doctor.find({}).select("-password");
 
     res.status(200).json({
       success: true,
