@@ -52,4 +52,6 @@ JWT_SECRET_key mate terminal ma node then type crypto.randomBytes(256).toString(
 and remove '' 
 
 
-Verify Token User is Pending part-3:- 54:42// donw
+Verify Token User is Pending part-3:- 54:42// done
+
+Get All Doctors Api is Not Working 
