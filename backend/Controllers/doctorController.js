@@ -41,7 +41,9 @@ export const getSingleDoctor = async (req, res) => {
   const id = req.params.id;
 
   try {
-    const doctor = await Doctor.findById(id).select("-password"); // select no use kari ("-")thi j data show na karva hoy te
+    const doctor = await Doctor.findById(id)
+      .populate("reviews")
+      .select("-password"); // select no use kari ("-")thi j data show na karva hoy te
 
     res.status(200).json({
       success: true,
@@ -73,11 +75,11 @@ export const getAllDoctor = async (req, res) => {
       );
     }
 
-    const doctors = await Doctor.find({}).select("-password");
+    // const doctors = await Doctor.find({}).select("-password");
 
     res.status(200).json({
       success: true,
-      message: "Doctor found",
+      message: "Doctors found",
       data: doctors,
     });
   } catch (err) {

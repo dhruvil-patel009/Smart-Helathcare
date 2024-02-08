@@ -37,5 +37,3 @@ export const createReview = async (req, res) => {
     res.status(500).json({ success: false, message: err.message });
   }
 };
-
-// part-03:   1:17:16
