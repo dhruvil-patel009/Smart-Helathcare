@@ -6,7 +6,7 @@ import { BiMenu } from "react-icons/bi";
 
 const navLinks = [
   {
-    path: "/home",
+    path: "/",
     display: "Home",
   },
   {
@@ -52,7 +52,9 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* ====== log ========== */}
           <div className="logodiv">
-            <img src={logo} alt="logo" className="Logoimg" />
+            <a href="/">
+              <img src={logo} alt="logo" className="Logoimg" />
+            </a>
           </div>
 
           {/* ========== menu ============ */}
