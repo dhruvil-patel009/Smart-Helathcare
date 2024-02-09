@@ -1,13 +1,15 @@
 import { useState } from "react";
-
 import signupimg from "../assets/images/signup.gif";
 import avatar from "../assets/images/doctor-img01.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UploadImageToCloudinary from "../utils/uploadCloudinary";
+import { BASE_URL } from "../config";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewURL, setPreviewURL] = useState("");
+  const [loading, setloading] = usestate(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -17,6 +19,8 @@ const Signup = () => {
     gender: "",
     role: "patient",
   });
+
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -34,8 +38,31 @@ const Signup = () => {
   };
 
   const submitHandler = async (event) => {
-    console.log(formData);
+    // console.log(formData);
     event.preventDefault();
+    setloading(true);
+
+    try {
+      const res = await fetch(`${BASE_URL}/auth/register`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const { message } = await res.join();
+      if (!res.ok) {
+        throw new Error(message);
+      }
+
+      setloading(false);
+      toast.success(message);
+      navigate("/login");
+    } catch (err) {
+      toast.error(err.message);
+      setloading(false);
+    }
   };
   return (
     <section className="px-5 xl:px-0">
@@ -178,5 +205,5 @@ const Signup = () => {
   );
 };
 
-// 1:07:01
+// 13:51 part 4
 export default Signup;
