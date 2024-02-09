@@ -55,3 +55,19 @@ and remove ''
 Verify Token User is Pending part-3:- 54:42// done
 
 Get All Doctors Api is Not Working 
+
+
+
+
+
+
+https://cloudinary.com/
+
+for login and sign up data storage to use 
+
+sign up with dhruvilp900 id 
+
+1) Go to Dashboard and Copy CLoud Name 
+2) Create .env.local file in Frontend and Write VITE_CLOUD_NAME = "Your Cloud Name "\
+3) After Go to Setting and go to upload section and then click "Add Upload preset" link
+4) Upload preset name set to name and then select Signing Mode: unsigned and Save

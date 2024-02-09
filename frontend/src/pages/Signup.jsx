@@ -3,6 +3,7 @@ import { useState } from "react";
 import signupimg from "../assets/images/signup.gif";
 import avatar from "../assets/images/doctor-img01.png";
 import { Link } from "react-router-dom";
+import UploadImageToCloudinary from "../utils/uploadCloudinary";
 
 const Signup = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -23,12 +24,17 @@ const Signup = () => {
 
   const handleFileInputChange = async (event) => {
     const file = event.target.files[0];
+    const data = await UploadImageToCloudinary(file);
+    // console.log(file);
+    // console.log(data);
 
-    //  later we will use cloudinary to upload image
-    console.log(file);
+    setPreviewURL(data.url);
+    setSelectedFile(data.url);
+    setFormData({ ...formData, photo: data.url });
   };
 
   const submitHandler = async (event) => {
+    console.log(formData);
     event.preventDefault();
   };
   return (
@@ -58,7 +64,7 @@ const Signup = () => {
               <div className="mb-5">
                 <input
                   type="text"
-                  name="fullname"
+                  name="name"
                   id="fullname"
                   value={formData.name}
                   onChange={handleInputChange}
