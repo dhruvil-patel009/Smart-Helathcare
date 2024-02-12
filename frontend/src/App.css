@@ -99,3 +99,7 @@ body {
 .Logoimg {
   max-width: 20%;
 }
+
+.navigation ul {
+  width: max-content;
+}
