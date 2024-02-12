@@ -55,7 +55,11 @@ const Login = () => {
 
           <p className="mt-5 text-textColor text-center ">
             Don&apos;t have an account?{""}
-            <Link to="/register" className="text-primaryColor font-medium ml-1">
+            <Link
+              to="/register"
+              className="text-primaryColor font-medium ml-1"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               Register
             </Link>
           </p>

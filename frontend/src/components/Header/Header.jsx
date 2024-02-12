@@ -64,6 +64,7 @@ const Header = () => {
                 <li key={index}>
                   <NavLink
                     to={link.path}
+                    onClick={() => window.scrollTo(0, 0)}
                     className={(navClass) =>
                       navClass.isActive
                         ? "text-primaryColor text-[16px] leading-7 font-[600]"
@@ -91,7 +92,7 @@ const Header = () => {
               </Link>
             </div>
 
-            <Link to="/login">
+            <Link to="/login" onClick={() => window.scrollTo(0, 0)}>
               <button className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
                 Login
               </button>
