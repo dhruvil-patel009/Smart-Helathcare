@@ -71,3 +71,16 @@ sign up with dhruvilp900 id
 2) Create .env.local file in Frontend and Write VITE_CLOUD_NAME = "Your Cloud Name "\
 3) After Go to Setting and go to upload section and then click "Add Upload preset" link
 4) Upload preset name set to name and then select Signing Mode: unsigned and Save
+
+
+
+image upload then first time error and second time success fix --------- pending 
+part:-4 starting 
+
+
+
+
+.env.local file  path frontend /.env.local
+
+VITE_CLOUD_NAME = smarthealthcare
+VITE_UPLOAD_PRESET = doctor-Appointment-system
