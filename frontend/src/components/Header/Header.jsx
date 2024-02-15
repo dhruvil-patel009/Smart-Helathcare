@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import logo from "../../assets/images/SmartHealthLogo.png";
-import userImg from "../../assets/images/avatar-icon.png";
 import { NavLink, Link } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
+import { authContext } from "../../context/AuthContext";
+import HashLoader from "react-spinners/HashLoader";
 
 const navLinks = [
   {
@@ -25,6 +26,7 @@ const navLinks = [
 const Header = () => {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
+  const { user, role, token } = useContext(authContext);
 
   const handleStickyHeader = () => {
     window.addEventListener("scroll", () => {
@@ -80,23 +82,32 @@ const Header = () => {
 
           {/*  ===================== Nav right ===========================*/}
           <div className="flex items-center gap-4">
-            <div className="hidden">
-              <Link to="/">
-                <figure className="w-[35px] h-[35px] rounded-full">
-                  <img
-                    src={userImg}
-                    className="w-full rounded-full"
-                    alt="userImg"
-                  />
-                </figure>
+            {token && user ? (
+              <div>
+                <Link
+                  to={`${
+                    role === "doctor"
+                      ? "/doctors/profile/me"
+                      : "/users/profile/me"
+                  }`}
+                >
+                  <figure className="w-[35px] h-[35px] rounded-full">
+                    <img
+                      src={user?.photo}
+                      className="w-full rounded-full"
+                      alt="userImg"
+                    />
+                  </figure>
+                  <h2>{user?.name}</h2>
+                </Link>
+              </div>
+            ) : (
+              <Link to="/login" onClick={() => window.scrollTo(0, 0)}>
+                <button className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
+                  Login
+                </button>
               </Link>
-            </div>
-
-            <Link to="/login" onClick={() => window.scrollTo(0, 0)}>
-              <button className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
-                Login
-              </button>
-            </Link>
+            )}
 
             <span className="md:hidden" onClick={toggleMenu}>
               <BiMenu className="w-6 h-6 cursor-pointer " />

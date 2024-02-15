@@ -84,3 +84,7 @@ part:-4 starting
 
 VITE_CLOUD_NAME = smarthealthcare
 VITE_UPLOAD_PRESET = doctor-Appointment-system
+
+
+34:54
+36:59
