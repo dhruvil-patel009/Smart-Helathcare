@@ -218,5 +218,4 @@ const Signup = () => {
   );
 };
 
-// 13:51 part 4
 export default Signup;

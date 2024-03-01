@@ -3,7 +3,6 @@ import logo from "../../assets/images/SmartHealthLogo.png";
 import { NavLink, Link } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import { authContext } from "../../context/AuthContext";
-import HashLoader from "react-spinners/HashLoader";
 
 const navLinks = [
   {
