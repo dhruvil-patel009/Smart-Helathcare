@@ -88,5 +88,7 @@ VITE_UPLOAD_PRESET = doctor-Appointment-system
 
 54:57 part 4
 
-1:12:40
-protectedRoutes Error in Routers
+1:14
+
+https://www.youtube.com/watch?v=SbjgYbbP4TI
+pehla protectedRoutes Error in Routers solved then next work start
