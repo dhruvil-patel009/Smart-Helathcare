@@ -1,15 +1,24 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { authContext } from "../../context/AuthContext";
 import userImg from "../../assets/images/doctor-img01.png";
 import MyBookings from "./MyBookings";
 import Profile from "./profile";
+import useGetProfile from "../../hooks/userFetchData";
+import { BASE_URL } from "../../config";
 
 const MyAccount = () => {
   const { dispatch } = useContext(authContext);
   const [tab, setTab] = useState("bookings");
   const navigate = useNavigate();
+
+  const {
+    data: userData,
+    loading,
+    error,
+  } = useGetProfile(`${BASE_URL}/users/profile/me`);
+
+  console.log(userData, "userdata");
 
   const handlelogout = () => {
     dispatch({ type: "LOGOUT" });
