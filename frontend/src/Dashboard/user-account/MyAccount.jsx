@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { authContext } from "../../context/AuthContext";
 import userImg from "../../assets/images/doctor-img01.png";
 import MyBookings from "./MyBookings";
-import Profile from "./profile";
+import Profile from "./Profile";
 import useGetProfile from "../../hooks/userFetchData";
 import { BASE_URL } from "../../config";
 import Loading from "../../components/Loader/Loading";
@@ -38,25 +38,27 @@ const MyAccount = () => {
               <div className="flex items-center justify-center">
                 <figure className="w-[100px] h-[100px] rounded-full border-2 border-solid border-primaryColor">
                   <img
-                    src={userImg}
+                    src={userData.photo} // Get user photo to login user
                     alt="userimg"
                     className="w-full h-full rounded-full"
+                    style={{ height: "-webkit-fill-available" }}
                   />
                 </figure>
               </div>
 
               <div className="text-center mt-4">
                 <h3 className="text-[18px] leading-[30px] text-headingColor font-bold ">
-                  Dhruvil Patel
+                  {userData.name}
                 </h3>
                 <p className="text-textColor text-[15px] leading-6 font-medium">
-                  Example@gmail.com
+                  {userData.email} {/*Get user email to login user */}
                 </p>
 
                 <p className="text-textColor text-[15px] leading-6 font-medium">
                   Blood Type:
                   <span className="ml-2 text-headingColor text-[22px] leading-8">
-                    O+
+                    {userData.bloodType}{" "}
+                    {/*Get user Blood Type to login user */}
                   </span>
                 </p>
               </div>
@@ -97,7 +99,7 @@ const MyAccount = () => {
               </div>
 
               {tab === "bookings" && <MyBookings />}
-              {tab === "settings" && <Profile />}
+              {tab === "settings" && <Profile user={userData} />}
             </div>
           </div>
         )}

@@ -95,3 +95,11 @@ pehla protectedRoutes Error in Routers solved then next work start
 
 
 error showing to users/profile data not get in part 4 1:18:21
+
+in update profile cloudinary atr failed  p-4  01:29:00
+
+
+Chek image Upload error not upload to cloudinary
+
+
+part:-5 4:28

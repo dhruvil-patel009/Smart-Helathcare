@@ -23,18 +23,19 @@ const Routers = () => {
       <Route
         path="/users/profile/me"
         element={
-          // <MyAccount />
-          <ProtectedRoute allowedRoles={["patient"]}>
-            <MyAccount />
-          </ProtectedRoute>
+          <MyAccount allowedRoles={["patient"]} />
+          // <ProtectedRoute allowedRoles={["patient"]}>
+          //   <MyAccount />
+          // </ProtectedRoute>
         }
       />
       <Route
         path="/doctors/profile/me"
         element={
-          <ProtectedRoute allowedRoles={["doctor"]}>
-            <Dashboard />
-          </ProtectedRoute>
+          <Dashboard allowedRoles={["doctor"]} />
+          // <ProtectedRoute allowedRoles={["doctor"]}>
+          //   <Dashboard />
+          // </ProtectedRoute>
         }
       />
     </Routes>

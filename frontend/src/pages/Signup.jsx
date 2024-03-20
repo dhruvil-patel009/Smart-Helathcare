@@ -77,6 +77,7 @@ const Signup = () => {
                 src={signupimg}
                 alt="signupimg"
                 className="w-full rounded-l-lg"
+                style={{ height: "-webkit-fill-available" }}
               />
             </figure>
           </div>
@@ -164,6 +165,7 @@ const Signup = () => {
                       src={previewURL}
                       alt=""
                       className="w-full rounded-full"
+                      style={{ height: "-webkit-fill-available" }}
                     />
                   </figure>
                 )}

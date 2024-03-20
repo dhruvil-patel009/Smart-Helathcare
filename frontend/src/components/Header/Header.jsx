@@ -47,6 +47,11 @@ const Header = () => {
   });
 
   const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
+
+  const handleClick = () => {
+    history.push("/users/profile/me");
+  };
+
   return (
     <header className="header flex items-center" ref={headerRef}>
       <div className="container">
@@ -90,14 +95,18 @@ const Header = () => {
                       : "/users/profile/me"
                   }`}
                 >
-                  <figure className="w-[35px] h-[35px] rounded-full cursor-pointer">
+                  <figure
+                    className="w-[35px] h-[35px] rounded-full cursor-pointer"
+                    onClick={handleClick}
+                  >
                     <img
                       src={user?.photo}
                       className="w-full rounded-full"
                       alt="userImg"
+                      style={{ height: "-webkit-fill-available" }}
                     />
                   </figure>
-                  <h2>{user?.name}</h2>
+                  {/* <h2>{user?.name}</h2> */}
                 </Link>
               </div>
             ) : (
