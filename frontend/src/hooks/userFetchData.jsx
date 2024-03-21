@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { token } from "../config";
 
-const userFetchData = (url) => {
+const UserFetchData = (url) => {
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(false);
   const [error, setError] = useState(null);
@@ -39,4 +39,4 @@ const userFetchData = (url) => {
   };
 };
 
-export default userFetchData;
+export default UserFetchData;
