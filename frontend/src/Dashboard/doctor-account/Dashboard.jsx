@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Loader from "../../components/Loader/Loading";
 import Error from "../../components/Error/Error";
 import useGetProfile from "../../hooks/UserFetchData";
 import { BASE_URL } from "../../config";
 import Tabs from "./Tabs";
 import starIcon from "../../assets/images/Star.png";
+import DoctorAbout from "./../../pages/Doctors/DoctorAbout";
+import Profile from "./Profile";
+
 const Dashboard = () => {
   const { data, loading, error } = useGetProfile(
     `${BASE_URL}/doctors/profile/me`
@@ -66,7 +69,7 @@ const Dashboard = () => {
                           </span>
 
                           <h3 className="text-[22px] leading-9 font-bold text-headingColor mt-3">
-                            Abhay Patel
+                            {data.name}
                           </h3>
 
                           <div className="flex items-center gap-[6px]">
@@ -74,14 +77,28 @@ const Dashboard = () => {
                               <img src={starIcon} alt="" />
                               4.5
                             </span>
+                            <span className="text-textColor text-[14px] leading-5 lg:text-[16px] lg:leading-6 font-semibold">
+                              (233)
+                            </span>
                           </div>
+
+                          <p className="text__para font-[15px] lg:max-w-[390px] leading-6">
+                            docotr bio
+                          </p>
                         </div>
                       </div>
+
+                      <DoctorAbout
+                        name={data.name}
+                        about={data.about}
+                        qualification={data.qualification}
+                        experiences={data.experiences}
+                      />
                     </div>
                   )}
 
                   {tab === "appointments" && <div>appointments</div>}
-                  {tab === "settings" && <div>profile settings</div>}
+                  {tab === "settings" && <Profile />}
                 </div>
               </div>
             </div>
