@@ -10,6 +10,7 @@ import MyAccount from "../Dashboard/user-account/MyAccount";
 import Dashboard from "../Dashboard/doctor-account/Dashboard.jsx";
 import ProtectedRoute from "./ProtectedRoute";
 import CheckoutSuccess from "../pages/CheckoutSuccess.jsx";
+import Insurance from "../pages/Insurace.jsx";
 const Routers = () => {
   return (
     <Routes>
@@ -22,6 +23,7 @@ const Routers = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/services" element={<Services />} />
       <Route path="/checkout-success" element={<CheckoutSuccess />} />
+      <Route path="/insurance" element={<Insurance />} />
       <Route
         path="/users/profile/me"
         element={
