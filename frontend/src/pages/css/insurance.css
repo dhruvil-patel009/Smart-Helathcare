@@ -1,0 +1,14 @@
+.articles {
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+@media screen and (max-width: 768px) {
+    .articles {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    }
+}
